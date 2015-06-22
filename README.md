@@ -38,7 +38,7 @@ Ok ok, I got it! How do I run the tests?
 mvn clean install -Dusername=YOUR_USERNAME -Dpassword=YOUR_PASSWORD -Ddriver_path=~/Downloads/chromedriver
 ```
 * The -Dusername and -Dpassword are required parameters.
-* The -Ddriver_path points to the location of the chromedriver on your machine. If you choose not to provide this value, it will default to the value set config/testdata.properties
+* The -Ddriver_path points to the location of the chromedriver on your machine. If you choose not to provide this value, it will default to the value set in config/testdata.properties
 * NOTE: be sure to cd into the directory of the pom.xml file when executing the maven command
 
 Test Output
@@ -55,6 +55,17 @@ Limitations
 -----
 * No separation of page objects with UI element locators: Ideally, the page objects should only be responsible for the navigational actions. They shouldn't be responsible for knowing HOW to access the UI elements. The UI element locators should be defined in a separate data model so as to separate the navigational concerns with the locator details.  Hence, I'd use an xml, json, or even a key value format to store this date (eg xpath, id, css).
 * Minimal verifications: Though the framework handles month rollovers just fine, it doesn't verify certain date time components like selection of the AM / PM fields. 
-* Testing : At the very minimum, I'd write positive, negative, and boundary tests for each feature. Features include login, cookie management, session handling, input validations, timezone discrepancies, and so much more.
-| Feature / Component | 3 Positive Tests | 2 Negative Tests | 2 Boundary Tests |
+* Testing : At the very minimum, I'd write positive, negative, boundary, and performance tests for each feature. Features include login, cookie management, session handling, input validations, timezone discrepancies, and so much more.
+
+| Feature Component | 3 Positive Tests | 2 Negative Tests | 2 Boundary Tests | 2 Perf Tests |
+| ------------- | ----------- | ----------- | ----------- | ----------- |
+| Copy Webinar | 
+| Title names |
+| Description values | 
+| webinar types |
+| start date |
+| start time |
+| end time |
+| time zones |
+| language |
 
