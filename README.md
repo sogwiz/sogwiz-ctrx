@@ -43,13 +43,15 @@ mvn clean install -Dusername=YOUR_USERNAME -Dpassword=YOUR_PASSWORD -Ddriver_pat
 
 Test Output
 -----
-The output of the tests is written to sogwiz-ctrx/target/surefire-reports
+The output of the tests is written to sogwiz-ctrx/target/surefire-reports/emailable-report.html
+![Image of Reports](https://raw.githubusercontent.com/sogwiz/sogwiz-ctrx/master/img_reports.png)
 
 Architecture
 -----
 * Page Object Model : the framework uses page objects to both provide the navigational facilities for the tests to traverse through the app and the framework provides verification methods that the tests can call assertions on
 * Config Driven: the framework is driven by maven command line options that supercede options set in the config/testdata.properties file. You can even define a clientType (eg chrome, firefox, safari)
 * Readable Tests: I wanted to make the tests as readable as possible
+![Image of Reports](https://raw.githubusercontent.com/sogwiz/sogwiz-ctrx/master/img_structure.png)
 
 Limitations
 -----
