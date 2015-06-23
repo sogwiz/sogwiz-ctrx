@@ -57,7 +57,11 @@ Limitations
 -----
 * No separation of page objects with UI element locators: Ideally, the page objects should only be responsible for the navigational actions. They shouldn't be responsible for knowing HOW to access the UI elements. The UI element locators should be defined in a separate data model so as to separate the navigational concerns with the locator details.  Hence, I'd use an xml, json, or even a key value format to store this date (eg xpath, id, css).
 * Minimal verifications: Though the framework handles month rollovers just fine, it doesn't verify certain date time components like selection of the AM / PM fields. 
-* Testing : At the very minimum, I'd write positive, negative, boundary, and performance tests for each feature. Features include login, cookie management, session handling, input validations, timezone discrepancies, and so much more.
+* waitForPage : I'd create an abstract method in the BasePageObject called waitForPage(). Essentially, each page object would have to implement this method.  It would return a boolean based on whether or not the page loaded correctly. 
+
+Testing 
+-----
+At the very minimum, I'd write positive, negative, boundary, and performance tests for each feature. Features include login, cookie management, session handling, input validations, timezone discrepancies, and so much more.
 
 | Feature Component | 3 Positive Tests | 2 Negative Tests | 2 Boundary Tests | 2 Perf Tests |
 | ------------- | ----------- | ----------- | ----------- | ----------- |
